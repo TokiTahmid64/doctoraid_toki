@@ -33,28 +33,8 @@ let doctors = [
   }
 ];
 
-app.get('/api', (req, res) => {
-  res.json({
-    "users": usersData
-  });
-});
 
-app.post('/api', (req, res) => {
-  const formData = req.body; // This will contain the data sent from the frontend
-  console.log("Data received from frontend:", formData);
 
-  // Dummy verification of username and email
-  const dummyUsername = "dummyuser";
-  const dummyEmail = "dummyuser@example.com";
-
-  if (formData.name === dummyUsername && formData.email === dummyEmail) {
-    // If the input data matches the dummy credentials, send a success message
-    res.status(200).json({ message: "Data received and verified successfully!" });
-  } else {
-    // If the input data doesn't match, send an error message
-    res.status(400).json({ message: "Invalid credentials!" });
-  }
-});
 
 app.post('/login', (req, res) => {
   const formData = req.body; // This will contain the data sent from the frontend
